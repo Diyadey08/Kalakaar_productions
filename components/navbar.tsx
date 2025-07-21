@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Zap, Palette, BookOpen } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-
+import {KalakaarLogo} from "@/assets/logo"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2" aria-label="Kalakaar Homepage">
-            <Palette className="h-8 w-8 text-purple-600" />
+            <KalakaarLogo />
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Kalakaar
             </span>
