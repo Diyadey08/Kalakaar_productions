@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Kalakaar",
     images: [
       {
-        url: "https://kalakaar.com/og-image.jpg",
+        url: "/Kalakaar logo (1)-08.png",
         width: 1200,
         height: 630,
         alt: "Kalakaar - Creative Learning Platform",

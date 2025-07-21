@@ -115,11 +115,11 @@ export default function Home() {
         <UseCases />
 
         {/* Community Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/10 dark:to-pink-950/10">
+        <section id="community" className="py-20 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/10 dark:to-pink-950/10" aria-labelledby="community-heading">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 id="community-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                   🤝 Join Kalakaar Community
                 </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
@@ -143,7 +143,21 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <Testimonials />
+        <section id="testimonials" className="py-20" aria-labelledby="testimonials-heading">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <div className="space-y-2">
+                <h2 id="testimonials-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  💬 What Our Students Say
+                </h2>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                  Hear from our successful students who transformed their creative careers
+                </p>
+              </div>
+            </div>
+            <Testimonials />
+          </div>
+        </section>
 
         {/* Contact/Enrollment Section */}
         <section id="contact" className="py-20 bg-muted/50 dark:bg-muted/10" aria-labelledby="contact-heading">
