@@ -68,44 +68,8 @@ export default function ContactForm() {
             <Input id="email" type="email" placeholder="john.doe@company.com" required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="company">Company/Organization</Label>
+            <Label htmlFor="company">Company/Individual</Label>
             <Input id="company" placeholder="Acme Inc." required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="role">Your Role</Label>
-            <Input id="role" placeholder="CTO, IT Director, etc." required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="size">Organization Size</Label>
-            <Select>
-              <SelectTrigger id="size">
-                <SelectValue placeholder="Select organization size" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="1-50">1-50 employees</SelectItem>
-                <SelectItem value="51-200">51-200 employees</SelectItem>
-                <SelectItem value="201-500">201-500 employees</SelectItem>
-                <SelectItem value="501-1000">501-1000 employees</SelectItem>
-                <SelectItem value="1001+">1001+ employees</SelectItem>
-                <SelectItem value="government">Government Agency</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="course">Course Interest</Label>
-            <Select>
-              <SelectTrigger id="course">
-                <SelectValue placeholder="Select your area of interest" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="art-classes">Art Classes</SelectItem>
-                <SelectItem value="exam-coaching">Entrance Exam Coaching</SelectItem>
-                <SelectItem value="digital-art">Digital Art & Design</SelectItem>
-                <SelectItem value="ui-ux">UI/UX Design</SelectItem>
-                <SelectItem value="fashion">Fashion Design</SelectItem>
-                <SelectItem value="graphic-design">Graphic Design</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">How can we help?</Label>

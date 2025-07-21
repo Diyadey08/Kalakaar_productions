@@ -41,6 +41,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isManualScrolling, setIsManualScrolling] = useState(false);
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -48,6 +50,28 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       checkScrollability();
     }
   }, [initialScroll]);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!isHovered && carouselRef.current) {
+      const scrollInterval = setInterval(() => {
+        if (carouselRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+          
+          // If we've reached the end, scroll back to the beginning
+          if (scrollLeft >= scrollWidth - clientWidth) {
+            carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            // Scroll slowly to the right (1px per interval for smooth motion)
+            carouselRef.current.scrollBy({ left: 1, behavior: "auto" });
+          }
+          checkScrollability();
+        }
+      }, isManualScrolling ? 15 : 30); // Faster when manual scrolling (15ms), normal when auto (50ms)
+
+      return () => clearInterval(scrollInterval);
+    }
+  }, [isHovered, isManualScrolling]);
 
   const checkScrollability = () => {
     if (carouselRef.current) {
@@ -60,12 +84,18 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      setIsManualScrolling(true);
+      // Reset manual scrolling state after 3 seconds
+      setTimeout(() => setIsManualScrolling(false), 3000);
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      setIsManualScrolling(true);
+      // Reset manual scrolling state after 3 seconds
+      setTimeout(() => setIsManualScrolling(false), 3000);
     }
   };
 
@@ -95,6 +125,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
           ref={carouselRef}
           onScroll={checkScrollability}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <div
             className={cn(
@@ -121,7 +153,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     duration: 0.5,
                     delay: 0.2 * index,
                     ease: "easeOut",
-                    once: true,
                   },
                 }}
                 key={"card" + index}
@@ -239,7 +270,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-72 dark:bg-neutral-900"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">

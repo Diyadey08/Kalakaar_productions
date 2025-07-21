@@ -12,14 +12,14 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Courses", href: "#courses" },
-    { label: "Community", href: "#community" },
+     { label: "Explore", href: "#courses" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2" aria-label="Kalakaar Homepage">
             <Palette className="h-8 w-8 text-purple-600" />
@@ -31,7 +31,7 @@ export default function Navbar() {
 
         <nav className="hidden md:flex gap-6" aria-label="Main Navigation">
           {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
+            <Link key={index} href={item.href} className="text-lg font-medium transition-colors hover:text-primary">
               {item.label}
             </Link>
           ))}
@@ -66,7 +66,7 @@ export default function Navbar() {
                   <Link
                     key={index}
                     href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-primary"
+                    className="text-xl font-medium transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}

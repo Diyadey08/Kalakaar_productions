@@ -114,7 +114,7 @@ export default function Home() {
         {/* Use Cases */}
         <UseCases />
 
-        {/* Community Section */}
+        {/* Community Section
         <section id="community" className="py-20 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/10 dark:to-pink-950/10" aria-labelledby="community-heading">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -140,7 +140,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials */}
         <section id="testimonials" className="py-20" aria-labelledby="testimonials-heading">
