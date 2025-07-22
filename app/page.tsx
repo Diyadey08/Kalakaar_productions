@@ -45,16 +45,15 @@ export default function Home() {
                   <BookOpen className="h-5 w-5" />
                   <div className="flex flex-col items-start">
                     <span className="text-[15px] font-medium">View All Courses</span>
-                    <span className="text-xs text-purple-100 -mt-0.5">Start Learning</span>
                   </div>
                 </Button>
-                <Button className="flex items-center gap-3 px-6 py-6 h-[60px] bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-xl border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                {/* <Button className="flex items-center gap-3 px-6 py-6 h-[60px] bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-xl border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <MessageCircle className="h-5 w-5" />
                   <div className="flex flex-col items-start">
                     <span className="text-[15px] font-medium">Join WhatsApp</span>
                     <span className="text-xs text-green-100 -mt-0.5">Community</span>
                   </div>
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
