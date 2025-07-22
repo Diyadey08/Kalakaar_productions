@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2" aria-label="Kalakaar Homepage">
             <KalakaarLogo />
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-white dark:text-neutral-200 ">
               Kalakaar
             </span>
           </Link>
@@ -40,18 +40,14 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
 
-          <Button
-            asChild
-            className="hidden md:flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl border-0 h-auto shadow-lg"
-          >
-            <Link href="#contact">
-              <BookOpen className="h-4 w-4 text-white" />
-              <div className="flex flex-col items-start">
-                <span className="text-sm font-medium">View Courses</span>
-                <span className="text-xs text-purple-100 -mt-0.5">Start Learning</span>
-              </div>
-            </Link>
-          </Button>
+          <Link href="#contact" className="hidden md:block">
+            <button className="relative inline-flex h-12 overflow-hidden rounded-sm p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-sm bg-blue-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                View Courses
+              </span>
+            </button>
+          </Link>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">

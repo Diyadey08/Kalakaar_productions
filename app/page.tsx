@@ -10,7 +10,8 @@ import FramerSpotlight from "@/components/framer-spotlight"
 import CssGridBackground from "@/components/css-grid-background"
 import FeaturesSection from "@/components/features-section"
 import StructuredData from "@/components/structured-data"
-
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import { ButtonsCard } from "../ui/tailwindcss-buttons";
 export default function Home() {
   return (
     <>
@@ -24,11 +25,17 @@ export default function Home() {
           <FramerSpotlight />
           <div className="container px-4 md:px-6 py-16 md:py-20">
             <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-              <div className="inline-block rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 text-sm text-white mb-6 font-medium">
+              <div className="inline-block rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 px-4 py-2 text-sm text-white mb-6 font-medium">
                 🎨 Creative Learning Platform
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                Kalakaar
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-6">
+                <div className="text-blue-950 dark:text-white lg:text-[10rem] tracking-tight">Kalakaar</div>
+                <div className="text-5xl">
+                  <span className="text-blue-950 dark:text-white">School of </span>
+                  <span style={{ color: '#246CF4' }}>Art </span>
+                  <span className="text-blue-950 dark:text-white">& </span>
+                  <span style={{ color: '#246CF4' }}>Design</span>
+                </div>
               </h1>
               <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                 Your Gateway to Artistic Excellence
@@ -41,12 +48,12 @@ export default function Home() {
               <TypingPromptInput />
 
               <div className="flex flex-wrap justify-center gap-4 mt-16">
-                <Button className="flex items-center gap-3 px-6 py-6 h-[60px] bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <BookOpen className="h-5 w-5" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-[15px] font-medium">View All Courses</span>
-                  </div>
-                </Button>
+                <button className="relative inline-flex h-12 overflow-hidden rounded-sm p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-sm bg-blue-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                    View All Courses
+                  </span>
+                </button>
                 {/* <Button className="flex items-center gap-3 px-6 py-6 h-[60px] bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-xl border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <MessageCircle className="h-5 w-5" />
                   <div className="flex flex-col items-start">
@@ -60,10 +67,12 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
+       
         <FeaturesSection />
-
+                  
         {/* Courses Section */}
         <section className="py-20" id="courses" aria-labelledby="courses-heading">
+          
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
