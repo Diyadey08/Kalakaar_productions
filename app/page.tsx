@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button"
 import { Palette, BookOpen, Users, Zap, MessageCircle, GraduationCap } from "lucide-react"
 import ContactForm from "@/components/contact-form"
@@ -11,7 +12,7 @@ import CssGridBackground from "@/components/css-grid-background"
 import FeaturesSection from "@/components/features-section"
 import StructuredData from "@/components/structured-data"
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { ButtonsCard } from "../ui/tailwindcss-buttons";
+import AnimatedSplitText from "@/components/ui/animated-split-text";
 export default function Home() {
   return (
     <>
@@ -29,20 +30,54 @@ export default function Home() {
                 🎨 Creative Learning Platform
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-6">
-                <div className="text-blue-950 dark:text-white lg:text-[10rem] tracking-tight">Kalakaar</div>
-                <div className="text-5xl">
-                  <span className="text-blue-950 dark:text-white">School of </span>
-                  <span style={{ color: '#246CF4' }}>Art </span>
-                  <span className="text-blue-950 dark:text-white">& </span>
-                  <span style={{ color: '#246CF4' }}>Design</span>
+                <div className="text-blue-950 dark:text-white text-6xl md:text-8xl lg:text-[10rem] tracking-tight">
+                  <AnimatedSplitText 
+                    text="Kalakaar" 
+                    className="text-blue-950 dark:text-white text-6xl md:text-8xl lg:text-[10rem] tracking-tight"
+                    variant="fade"
+                    stagger={0.1}
+                  />
+                </div>
+                <div className="text-2xl md:text-4xl lg:text-5xl">
+                  <AnimatedSplitText
+                    text="School of Art & Design"
+                    className="text-2xl md:text-4xl lg:text-5xl"
+                    variant="slide"
+                    stagger={0.08}
+                    splitBy="word"
+                    renderWord={(word: string, index: number) => (
+                      <span 
+                        key={index}
+                        className={
+                          word === 'Art' || word === 'Design' 
+                            ? 'text-[#246CF4]' 
+                            : 'text-blue-950 dark:text-white'
+                        }
+                      >
+                        {word}
+                      </span>
+                    )}
+                  />
                 </div>
               </h1>
               <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                Your Gateway to Artistic Excellence
+                <AnimatedSplitText
+                  text="Your Gateway to Artistic Excellence"
+                  className="text-2xl md:text-3xl font-semibold text-foreground"
+                  variant="fade"
+                  stagger={0.03}
+                  splitBy="word"
+                />
               </p>
               <p className="text-lg text-muted-foreground md:text-xl max-w-3xl mb-12">
-                Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative
-                workshops. Join our vibrant community of learners and creators.
+                <AnimatedSplitText
+                  text="Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and creators."
+                  className="text-lg text-muted-foreground md:text-xl max-w-3xl"
+                  variant="slide"
+                  stagger={0.02}
+                  splitBy="word"
+                  delay={0.5}
+                />
               </p>
 
               <TypingPromptInput />
