@@ -7,7 +7,6 @@ import UseCases from "@/components/use-cases"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import TypingPromptInput from "@/components/typing-prompt-input"
-import FramerSpotlight from "@/components/framer-spotlight"
 import CssGridBackground from "@/components/css-grid-background"
 import FeaturesSection from "@/components/features-section"
 import StructuredData from "@/components/structured-data"
@@ -18,14 +17,13 @@ import CarouselDemo from "@/components/feature-section";
 export default function Home() {
   return (
     <>
-      <StructuredData />
-      <div className="flex min-h-screen flex-col">
-       
+      {/* <StructuredData /> */}
+      <div className="flex flex-col">
 
         {/* Hero Section */}
-        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section id="hero" className="relative flex items-center justify-center overflow-hidden">
           <CssGridBackground />
-          <FramerSpotlight />
+          
           <div className="container px-4 md:px-6 py-16 md:py-20">
             <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
               <div className="inline-block rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 px-4 py-2 text-sm text-white mb-6 font-medium">
@@ -106,10 +104,10 @@ export default function Home() {
         {/* Features Section */}
        
         
-          <CarouselDemo />        
         {/* Courses Section */}
-        <section className="py-20" id="courses" aria-labelledby="courses-heading">
+          <CarouselDemo />        
           
+        <section className="py-20 bg-background grid-background grid-gradient" id="courses" aria-labelledby="courses-heading">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
@@ -188,7 +186,7 @@ export default function Home() {
         </section> */}
 
         {/* Testimonials */}
-        <section id="testimonials" className="py-20" aria-labelledby="testimonials-heading">
+        <section id="testimonials" className="py-20 bg-background grid-background grid-gradient" aria-labelledby="testimonials-heading">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
@@ -206,7 +204,7 @@ export default function Home() {
 
           <Component />
         {/* Contact/Enrollment Section */}
-        <section id="contact" className="py-20 bg-muted/50 dark:bg-muted/10" aria-labelledby="contact-heading">
+        <section id="contact" className="py-20 bg-background grid-background grid-gradient" aria-labelledby="contact-heading">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
               <div className="flex flex-col justify-center space-y-4">

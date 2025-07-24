@@ -82,7 +82,7 @@ export default function UseCases() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30 dark:from-background dark:to-muted/10">
+    <section className="py-20 bg-background grid-background grid-gradient">
       <div className="container px-4 md:px-6">
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
@@ -111,15 +111,21 @@ export default function UseCases() {
         >
           {useCases.map((useCase, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full bg-background/60 backdrop-blur-sm border transition-all duration-300 hover:shadow-lg dark:bg-background/80">
-                <CardHeader className="pb-2">
-                  <FrostedGlassIcon icon={useCase.icon} color={useCase.accentColor} className="mb-4" />
-                  <CardTitle>{useCase.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{useCase.description}</CardDescription>
-                </CardContent>
-              </Card>
+              <div className="relative overflow-hidden rounded-lg p-[1px] h-full group cursor-pointer">
+                <span className="absolute inset-[-1000%] animate-[spin_8s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#1e40af_0%,#3b82f6_25%,#60a5fa_50%,#93c5fd_75%,#1e40af_100%)] opacity-75 group-hover:opacity-100 transition-opacity duration-1000" />
+                <Card className="relative h-full bg-white dark:bg-gray-900 border-0 transition-all duration-1000 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/30 rounded-lg transform group-hover:scale-[1.02] group-hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
+                  <CardHeader className="pb-2 relative z-10 transform group-hover:translate-y-[-2px] transition-transform duration-300">
+                    <div className="transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                      <FrostedGlassIcon icon={useCase.icon} color={useCase.accentColor} className="mb-4" />
+                    </div>
+                    <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{useCase.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <CardDescription className="text-base group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">{useCase.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              </div>
             </motion.div>
           ))}
         </motion.div>

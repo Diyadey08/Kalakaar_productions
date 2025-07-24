@@ -1,15 +1,12 @@
 "use client"
 
 import { useRef, useState, useEffect } from "react"
-import { motion, useMotionValue, useSpring, animate } from "framer-motion"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 import { useTheme } from "next-themes"
 
 export default function FramerSpotlight() {
   const [isMounted, setIsMounted] = useState(false)
-  const [isMouseInHero, setIsMouseInHero] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const heroRef = useRef<HTMLElement | null>(null)
-  const defaultPositionRef = useRef({ x: 0, y: 0 })
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === "dark"
 
@@ -18,97 +15,52 @@ export default function FramerSpotlight() {
   const mouseY = useMotionValue(0)
 
   // Add spring physics for smoother movement
-  const springX = useSpring(mouseX, { damping: 20, stiffness: 300 })
-  const springY = useSpring(mouseY, { damping: 20, stiffness: 300 })
+  const springX = useSpring(mouseX, { damping: 25, stiffness: 400 })
+  const springY = useSpring(mouseY, { damping: 25, stiffness: 400 })
 
   // Define multiple spotlight colors
   const spotlightColors = [
-    { color: "rgba(36, 101, 237, 0.2)", darkColor: "rgba(36, 101, 237, 0.25)" }, // Blue (primary)
-    { color: "rgba(236, 72, 153, 0.15)", darkColor: "rgba(236, 72, 153, 0.2)" }, // Pink
-    { color: "rgba(16, 185, 129, 0.15)", darkColor: "rgba(16, 185, 129, 0.2)" }, // Green
+    { color: "rgba(36, 101, 237, 0.15)", darkColor: "rgba(36, 101, 237, 0.2)" }, // Blue (primary)
+    { color: "rgba(236, 72, 153, 0.1)", darkColor: "rgba(236, 72, 153, 0.15)" }, // Pink
+    { color: "rgba(16, 185, 129, 0.1)", darkColor: "rgba(16, 185, 129, 0.15)" }, // Green
   ]
 
-  // Update default position without causing re-renders
-  const updateDefaultPosition = () => {
-    if (heroRef.current) {
-      const heroRect = heroRef.current.getBoundingClientRect()
-      const centerX = heroRect.left + heroRect.width / 2
-      const centerY = heroRect.top + heroRect.height / 3
-
-      defaultPositionRef.current = { x: centerX, y: centerY }
-
-      // Set initial position
-      mouseX.set(centerX)
-      mouseY.set(centerY)
-    }
-  }
-
-  // Handle mouse enter/leave for hero section
-  const handleMouseEnter = () => {
-    setIsMouseInHero(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsMouseInHero(false)
-
-    // Animate back to default position
-    animate(mouseX, defaultPositionRef.current.x, {
-      duration: 1.2,
-      ease: "easeInOut",
-    })
-
-    animate(mouseY, defaultPositionRef.current.y, {
-      duration: 1.2,
-      ease: "easeInOut",
-    })
-  }
-
-  // Handle mouse movement only when inside hero
+  // Handle mouse movement globally
   const handleMouseMove = (e: MouseEvent) => {
-    if (isMouseInHero) {
-      mouseX.set(e.clientX)
-      mouseY.set(e.clientY)
-    }
+    mouseX.set(e.clientX)
+    mouseY.set(e.clientY)
   }
 
   // Setup effect - runs once on mount and cleans up on unmount
   useEffect(() => {
     setIsMounted(true)
 
-    // Find the hero section element
-    heroRef.current = document.getElementById("hero")
+    // Set initial position to center of viewport
+    const centerX = window.innerWidth / 2
+    const centerY = window.innerHeight / 2
+    mouseX.set(centerX)
+    mouseY.set(centerY)
 
-    // Initial setup
-    updateDefaultPosition()
-
-    // Event listeners
-    window.addEventListener("resize", updateDefaultPosition)
+    // Add global mouse move listener
     window.addEventListener("mousemove", handleMouseMove)
-
-    if (heroRef.current) {
-      heroRef.current.addEventListener("mouseenter", handleMouseEnter)
-      heroRef.current.addEventListener("mouseleave", handleMouseLeave)
-    }
 
     // Cleanup
     return () => {
-      window.removeEventListener("resize", updateDefaultPosition)
       window.removeEventListener("mousemove", handleMouseMove)
-
-      if (heroRef.current) {
-        heroRef.current.removeEventListener("mouseenter", handleMouseEnter)
-        heroRef.current.removeEventListener("mouseleave", handleMouseLeave)
-      }
     }
-  }, [isMouseInHero]) // Only depend on isMouseInHero
+  }, []) // Empty dependency array - only run once
 
   if (!isMounted) {
     return null
   }
 
   return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Primary spotlight that follows mouse/animation */}
+    <div 
+      ref={containerRef} 
+      className="fixed inset-0 overflow-hidden pointer-events-none z-10"
+      style={{ mixBlendMode: 'normal' }}
+    >
+      {/* Primary spotlight that follows mouse cursor */}
       <motion.div
         className="absolute pointer-events-none"
         style={{
