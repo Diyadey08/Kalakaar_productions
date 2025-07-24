@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button"
-import { Palette, BookOpen, Users, Zap, MessageCircle, GraduationCap } from "lucide-react"
+import { Palette, BookOpen, Users, Zap, MessageCircle, GraduationCap, Car } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import Testimonials from "@/components/testimonials"
 import UseCases from "@/components/use-cases"
@@ -14,6 +14,7 @@ import StructuredData from "@/components/structured-data"
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import AnimatedSplitText from "@/components/ui/animated-split-text";
 import Component from "@/components/founder-section";
+import CarouselDemo from "@/components/feature-section";
 export default function Home() {
   return (
     <>
@@ -104,8 +105,8 @@ export default function Home() {
 
         {/* Features Section */}
        
-        <FeaturesSection />
-                  
+        
+          <CarouselDemo />        
         {/* Courses Section */}
         <section className="py-20" id="courses" aria-labelledby="courses-heading">
           
@@ -202,7 +203,7 @@ export default function Home() {
             <Testimonials />
           </div>
         </section>
-        
+
           <Component />
         {/* Contact/Enrollment Section */}
         <section id="contact" className="py-20 bg-muted/50 dark:bg-muted/10" aria-labelledby="contact-heading">
