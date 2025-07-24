@@ -13,6 +13,7 @@ import FeaturesSection from "@/components/features-section"
 import StructuredData from "@/components/structured-data"
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import AnimatedSplitText from "@/components/ui/animated-split-text";
+import Component from "@/components/founder-section";
 export default function Home() {
   return (
     <>
@@ -201,7 +202,8 @@ export default function Home() {
             <Testimonials />
           </div>
         </section>
-
+        
+          <Component />
         {/* Contact/Enrollment Section */}
         <section id="contact" className="py-20 bg-muted/50 dark:bg-muted/10" aria-labelledby="contact-heading">
           <div className="container px-4 md:px-6">
