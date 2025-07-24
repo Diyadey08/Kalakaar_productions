@@ -77,7 +77,7 @@ export default function ContactForm() {
           </div>
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+            className="w-full bg-gradient-to-r from-blue-400 to-blue-600"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Get Course Information"}
