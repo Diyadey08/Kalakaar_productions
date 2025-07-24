@@ -10,6 +10,7 @@ export default function FeaturesSection() {
 
   return (
     <div className="w-full h-full py-20">
+    
       <h2 className="max-w-7xl pl-4 mx-auto text-[32px] font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         💡 Why Choose Kalakaar?
       </h2>

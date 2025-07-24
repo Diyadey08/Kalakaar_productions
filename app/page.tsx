@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <StructuredData />
       <div className="flex min-h-screen flex-col">
-        <Navbar />
+       
 
         {/* Hero Section */}
         <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
                 <h2 id="courses-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  📚 Courses Offered
+                  💡 Why Choose Kalakaar?
                 </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Comprehensive learning paths designed for every creative journey
@@ -120,7 +120,7 @@ export default function Home() {
               </div>
             </div>
             <div className="grid gap-8 lg:grid-cols-3 items-start">
-              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800">
+              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg">
                   <Palette className="h-10 w-10" />
                 </div>
@@ -130,7 +130,7 @@ export default function Home() {
                   ignite creativity.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border border-blue-200 dark:border-blue-800">
+              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border border-blue-200 dark:border-blue-800 h-[22rem]">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg">
                   <GraduationCap className="h-10 w-10" />
                 </div>
@@ -140,7 +140,7 @@ export default function Home() {
                   plans and mentorship.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 border border-orange-200 dark:border-orange-800">
+              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 border border-orange-200 dark:border-orange-800 h-[22rem]">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg">
                   <Zap className="h-10 w-10" />
                 </div>
