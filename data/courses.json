@@ -1,0 +1,20 @@
+{
+  "courses": [
+    {
+      "id": "ui-ux",
+      "title": "UI/UX Design",
+      "description": "Master user interface and user experience design",
+      "href": "/ui-ux",
+      "icon": "🎨",
+      "category": "Design"
+    },
+    {
+      "id": "graphic-design",
+      "title": "Graphic Design",
+      "description": "Create stunning visual communications",
+      "href": "/graphic-design",
+      "icon": "🖼️",
+      "category": "Design"
+    }
+  ]
+}
