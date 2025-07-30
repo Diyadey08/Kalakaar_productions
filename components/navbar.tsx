@@ -8,9 +8,13 @@ import { Menu, Zap, Palette, BookOpen, ChevronDown } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {KalakaarLogo} from "@/assets/logo"
 import coursesData from "@/data/courses.json"
+import { useTheme } from "next-themes"
+
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isCoursesOpen, setIsCoursesOpen] = useState(false)
+  const { resolvedTheme } = useTheme()
 
   const navItems = [
     { label: "Testimonials", href: "#testimonials" },
@@ -23,12 +27,23 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center space-x-2" aria-label="Kalakaar Homepage">
-            <KalakaarLogo />
-            <span className="text-2xl font-bold text-white dark:text-neutral-200 ">
-              Kalakaar
-            </span>
-          </Link>
+           {/* ✅ Logo Section */}
+        <Link href="/" className="flex items-center" aria-label="Kalakaar Homepage">
+         {resolvedTheme === "dark" ? (
+          <img
+          src="/Kalakaar_logo_Dark.png"
+          alt="Kalakaar Dark Logo"
+          className="h-[120px] w-auto object-contain"
+        />
+        
+          ) : (
+            <img
+             src="Kalakaar logo light.png"
+             alt="Kalakaar Dark Logo"
+             className="h-[120px] w-auto object-contain"
+             />
+          )}
+        </Link>
         </div>
 
         <nav className="hidden md:flex gap-6 items-center" aria-label="Main Navigation">

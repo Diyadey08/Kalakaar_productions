@@ -67,7 +67,6 @@ const AnimatedSplitText = ({
         </motion.span>
       ));
     } else {
-      // Split by characters
       return text.split("").map((char, index) => (
         <motion.span
           key={index}
@@ -87,9 +86,9 @@ const AnimatedSplitText = ({
   };
 
   return (
-    <div ref={ref} className={`inline-block ${className}`}>
+    <span ref={ref} className={`inline-block ${className}`}>
       {splitText()}
-    </div>
+    </span>
   );
 };
 
