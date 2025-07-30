@@ -67,7 +67,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                {/* <div className="mt-4 pt-3 border-t">
+                <div className="mt-4 pt-3 border-t">
                   <Link
                     href="/courses"
                     className="flex items-center justify-center gap-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors"
@@ -75,7 +75,7 @@ export default function Navbar() {
                     <BookOpen className="h-4 w-4" />
                     View All Courses
                   </Link>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
@@ -126,14 +126,14 @@ export default function Navbar() {
                         </div>
                       </Link>
                     ))}
-                    {/* <Link
+                    <Link
                       href="/courses"
                       className="flex items-center justify-center gap-2 mt-2 p-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors border border-primary/20 rounded-lg"
                       onClick={() => setIsOpen(false)}
                     >
                       <BookOpen className="h-4 w-4" />
                       View All Courses
-                    </Link> */}
+                    </Link>
                   </div>
                 </div>
 
