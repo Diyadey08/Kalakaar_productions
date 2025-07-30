@@ -41,37 +41,39 @@ export default function Home() {
               </div>
 
              
-              <h1 className="text-blue-950 dark:text-white text-6xl md:text-8xl lg:text-[5rem] font-bold tracking-tight mt-4">
-                <AnimatedSplitText
-                  text="Kalakaar"
-                  className="text-blue-950 dark:text-white text-8xl md:text-8xl lg:text-[5rem] tracking-tight"
-                  variant="fade"
-                  stagger={0.1}
-                />
-              </h1>
+              <h1 className="font-bold tracking-tighter mt-0 mb-5 text-blue-950 dark:text-white">
+           {/* Kalakaar - Bigger on all screens */}
+               <AnimatedSplitText 
+               text="Kalakaar" 
+               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight"
+               variant="fade"
+               stagger={0.1}
+               />
 
-              {/* Subheading */}
-              <div className="text-normal md:text-4xl lg:text-5xl mb-8">
-                <AnimatedSplitText
+           {/* School of Art & Design - Smaller on mobile */}
+             <div className="mt-4 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-medium">
+                  <AnimatedSplitText
                   text="School of Art & Design"
-                  className="text-normal md:text-4xl lg:text-5xl"
+                  className="tracking-tight"
                   variant="slide"
                   stagger={0.08}
                   splitBy="word"
                   renderWord={(word: string, index: number) => (
-                    <span
+                    <span 
                       key={index}
                       className={
-                        word === "Art" || word === "Design"
-                          ? "text-[#246CF4]"
-                          : "text-blue-950 dark:text-white"
+                        word === 'Art' || word === 'Design' 
+                          ? 'text-[#246CF4]' 
+                          : 'text-blue-950 dark:text-white'
                       }
-                    >
-                      {word}
-                    </span>
-                  )}
-                />
-              </div>
+                                        >
+                              {word}
+                            </span>
+                          )}
+                        />
+                      </div>
+                    </h1>
+
 
               {/* Tagline */}
               <p className="text-lg md:text-xl font-semibold mb-4">
@@ -85,16 +87,17 @@ export default function Home() {
               </p>
 
               {/* Description */}
-              <p className="text-lg text-muted-foreground md:text-xl max-w-3xl mb-12">
-                <AnimatedSplitText
-                  text="Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and creators."
-                  className="text-lg text-muted-foreground md:text-xl max-w-3xl"
-                  variant="slide"
-                  stagger={0.02}
-                  splitBy="word"
-                  delay={0.5}
-                />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mb-12">
+              <AnimatedSplitText
+                 text="Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and creators."
+                 className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl"
+                 variant="slide"
+                 stagger={0.02}
+                 splitBy="word"
+                 delay={0.5}
+               />
               </p>
+
 
               {/* Typing Input */}
               <TypingPromptInput />
