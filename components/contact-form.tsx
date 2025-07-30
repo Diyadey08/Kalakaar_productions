@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { CheckCircle2, AlertCircle } from "lucide-react"
 
+
 interface FormData {
   firstName: string
   lastName: string
@@ -111,10 +112,10 @@ export default function QueryForm() {
   }
 
   return (
-    <Card className="bg-slate-800/50 border-slate-700">
+    <Card className="dark:bg-gray-900 border-2 border-red-300">
       <CardHeader>
-        <CardTitle className="text-white">Ask About Kalakaar Courses</CardTitle>
-        <CardDescription className="text-slate-400">
+        <CardTitle className="text-blue">Ask About Kalakaar Courses</CardTitle>
+        <CardDescription className="text-slate-800 dark:text-white">
           Have questions about our courses? Fill out the form below and our team will get back to you with personalized
           guidance for your creative journey.
         </CardDescription>
@@ -128,7 +129,7 @@ export default function QueryForm() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
             <div className="space-y-2">
               <Label htmlFor="firstName" className="text-white">
                 First Name
@@ -139,7 +140,7 @@ export default function QueryForm() {
                 placeholder="John"
                 value={formData.firstName}
                 onChange={handleInputChange}
-                className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+                className="bg-white border-slate-400 text-white placeholder:text-slate-800"
                 required
               />
             </div>
@@ -153,7 +154,7 @@ export default function QueryForm() {
                 placeholder="Doe"
                 value={formData.lastName}
                 onChange={handleInputChange}
-                className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+                className="bg-white border-slate-400 text-white placeholder:text-slate-800"
                 required
               />
             </div>
@@ -170,7 +171,7 @@ export default function QueryForm() {
               placeholder="john.doe@company.com"
               value={formData.email}
               onChange={handleInputChange}
-              className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+              className="bg-white border-slate-400 text-white placeholder:text-slate-800"
               required
             />
           </div>
@@ -185,7 +186,7 @@ export default function QueryForm() {
               placeholder="Acme Inc."
               value={formData.company}
               onChange={handleInputChange}
-              className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+              className="bg-white border-slate-400 text-white placeholder:text-slate-800"
               required
             />
           </div>
@@ -201,7 +202,7 @@ export default function QueryForm() {
               rows={4}
               value={formData.message}
               onChange={handleInputChange}
-              className="bg-slate-900/50 border-slate-600 text-white placeholder:text-slate-500"
+              className="bg-white border-slate-400 text-white placeholder:text-slate-800"
               required
             />
           </div>
