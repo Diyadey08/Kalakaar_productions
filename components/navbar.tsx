@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2" aria-label="Kalakaar Homepage">
-            <KalakaarTextLogo 
+            <KalakaarLogo 
               width={140} 
               height={26} 
               className="text-blue-600 dark:text-blue-400 transition-colors duration-300 hover:text-blue-700 dark:hover:text-blue-300" 
