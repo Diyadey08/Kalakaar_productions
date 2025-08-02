@@ -449,25 +449,25 @@ export default function CoursePage() {
             {/* Topics Section */}
             {week.topics && week.topics.length > 0 && (
               <div
-                className={`bg-gradient-to-br ${
+                className={`bg-white dark:bg-white rounded-xl p-4 md:p-6 border ${
                   month.month === 1
-                    ? "from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200/50 dark:border-blue-700/50"
+                    ? "border-blue-200/50"
                     : month.month === 2
-                      ? "from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-purple-200/50 dark:border-purple-700/50"
+                      ? "border-purple-200/50"
                       : month.month === 3
-                        ? "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200/50 dark:border-green-700/50"
-                        : "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border-orange-200/50 dark:border-orange-700/50"
-                } rounded-xl p-4 md:p-6 border`}
+                        ? "border-green-200/50"
+                        : "border-orange-200/50"
+                } shadow-sm`}
               >
                 <h4
                   className={`text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 ${
                     month.month === 1
-                      ? "text-blue-700 dark:text-blue-300"
+                      ? "text-blue-700"
                       : month.month === 2
-                        ? "text-purple-700 dark:text-purple-300"
+                        ? "text-purple-700"
                         : month.month === 3
-                          ? "text-green-700 dark:text-green-300"
-                          : "text-orange-700 dark:text-orange-300"
+                          ? "text-green-700"
+                          : "text-orange-700"
                   }`}
                 >
                   <BookOpen className="w-4 h-4 md:w-5 md:h-5" />
@@ -476,26 +476,26 @@ export default function CoursePage() {
                 <div className="grid gap-2 md:gap-3">
                   {week.topics.map((topic, index) => (
                     <div key={index} className="flex items-start gap-2 md:gap-3 group">
-                      <div
-                        className={`w-1.5 h-1.5 md:w-2 md:h-2 ${
+                      <CheckCircle
+                        className={`w-4 h-4 md:w-5 md:h-5 ${
                           month.month === 1
-                            ? "bg-blue-500"
+                            ? "text-blue-500"
                             : month.month === 2
-                              ? "bg-purple-500"
+                              ? "text-purple-500"
                               : month.month === 3
-                                ? "bg-green-500"
-                                : "bg-orange-500"
-                        } rounded-full mt-2 group-hover:scale-125 transition-transform flex-shrink-0`}
+                                ? "text-green-500"
+                                : "text-orange-500"
+                        } mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0`}
                       />
                       <span
-                        className={`text-sm md:text-base text-neutral-700 dark:text-neutral-300 group-hover:${
+                        className={`text-sm md:text-base text-neutral-700 group-hover:${
                           month.month === 1
-                            ? "text-blue-600 dark:group-hover:text-blue-400"
+                            ? "text-blue-600"
                             : month.month === 2
-                              ? "text-purple-600 dark:group-hover:text-purple-400"
+                              ? "text-purple-600"
                               : month.month === 3
-                                ? "text-green-600 dark:group-hover:text-green-400"
-                                : "text-orange-600 dark:group-hover:text-orange-400"
+                                ? "text-green-600"
+                                : "text-orange-600"
                         } transition-colors`}
                       >
                         {topic}
@@ -508,34 +508,34 @@ export default function CoursePage() {
 
             {/* User Research Section */}
             {week.userResearch && (
-              <div className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 rounded-xl p-4 md:p-6 border border-indigo-200/50 dark:border-indigo-700/50">
-                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
+              <div className="bg-white dark:bg-white rounded-xl p-4 md:p-6 border border-indigo-200/50 shadow-sm">
+                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 text-indigo-700">
                   <Search className="w-4 h-4 md:w-5 md:h-5" />
                   User Research Methods:
                 </h4>
                 <div className="space-y-3 md:space-y-4">
                   <div>
-                    <h5 className="font-medium text-neutral-800 dark:text-neutral-200 mb-2 text-sm md:text-base">
+                    <h5 className="font-medium text-neutral-800 mb-2 text-sm md:text-base">
                       Qualitative Research:
                     </h5>
                     <div className="ml-3 md:ml-4 space-y-1 md:space-y-2">
                       {week.userResearch.qualitative.map((method, index) => (
                         <div key={index} className="flex items-start gap-2 md:gap-3">
-                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-sm md:text-base text-neutral-700 dark:text-neutral-300">{method}</span>
+                          <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-indigo-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm md:text-base text-neutral-700">{method}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h5 className="font-medium text-neutral-800 dark:text-neutral-200 mb-2 text-sm md:text-base">
+                    <h5 className="font-medium text-neutral-800 mb-2 text-sm md:text-base">
                       Quantitative Research:
                     </h5>
                     <div className="ml-3 md:ml-4 space-y-1 md:space-y-2">
                       {week.userResearch.quantitative.map((method, index) => (
                         <div key={index} className="flex items-start gap-2 md:gap-3">
-                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-sm md:text-base text-neutral-700 dark:text-neutral-300">{method}</span>
+                          <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-indigo-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm md:text-base text-neutral-700">{method}</span>
                         </div>
                       ))}
                     </div>
@@ -546,16 +546,16 @@ export default function CoursePage() {
 
             {/* Empathy Mapping Section */}
             {week.empathyMapping && (
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-xl p-4 md:p-6 border border-teal-200/50 dark:border-teal-700/50">
-                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 text-teal-700 dark:text-teal-300">
+              <div className="bg-white dark:bg-white rounded-xl p-4 md:p-6 border border-teal-200/50 shadow-sm">
+                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 text-teal-700">
                   <Users className="w-4 h-4 md:w-5 md:h-5" />
                   Empathy Mapping:
                 </h4>
                 <div className="grid gap-2 md:gap-3">
                   {week.empathyMapping.map((item, index) => (
                     <div key={index} className="flex items-start gap-2 md:gap-3 group">
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-teal-500 rounded-full mt-2 group-hover:scale-125 transition-transform flex-shrink-0" />
-                      <span className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                      <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-teal-500 mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0" />
+                      <span className="text-sm md:text-base text-neutral-700 group-hover:text-teal-600 transition-colors">
                         {item}
                       </span>
                     </div>
@@ -566,8 +566,8 @@ export default function CoursePage() {
 
             {/* Tasks Section */}
             {(week.task || week.empathyTask) && (
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-4 md:p-6 border border-green-200/50 dark:border-green-700/50">
-                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 text-green-700 dark:text-green-300">
+              <div className="bg-white dark:bg-white rounded-xl p-4 md:p-6 border border-green-200/50 shadow-sm">
+                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center gap-2 text-green-700">
                   <Target className="w-4 h-4 md:w-5 md:h-5" />
                   Tasks to Complete:
                 </h4>
@@ -575,7 +575,7 @@ export default function CoursePage() {
                   {week.task && (
                     <div className="flex items-start gap-2 md:gap-3 group cursor-pointer">
                       <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 group-hover:text-green-600 transition-colors flex-shrink-0" />
-                      <span className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                      <span className="text-sm md:text-base text-neutral-700 group-hover:text-green-600 transition-colors">
                         {week.task}
                       </span>
                     </div>
@@ -583,7 +583,7 @@ export default function CoursePage() {
                   {week.empathyTask && (
                     <div className="flex items-start gap-2 md:gap-3 group cursor-pointer">
                       <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 group-hover:text-green-600 transition-colors flex-shrink-0" />
-                      <span className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                      <span className="text-sm md:text-base text-neutral-700 group-hover:text-green-600 transition-colors">
                         {week.empathyTask}
                       </span>
                     </div>
