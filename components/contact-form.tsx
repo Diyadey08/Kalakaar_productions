@@ -112,10 +112,10 @@ export default function QueryForm() {
   }
 
   return (
-    <Card className="dark:bg-gray-900 border-2 border-red-300">
+    <Card className="dark:bg-gray-900">
       <CardHeader>
-        <CardTitle className="text-blue">Ask About Kalakaar Courses</CardTitle>
-        <CardDescription className="text-slate-800 dark:text-white">
+        <CardTitle className="text-blue-600 dark:text-blue-400">Ask About Kalakaar Courses</CardTitle>
+        <CardDescription className="text-slate-600 dark:text-slate-300">
           Have questions about our courses? Fill out the form below and our team will get back to you with personalized
           guidance for your creative journey.
         </CardDescription>
@@ -131,7 +131,7 @@ export default function QueryForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
             <div className="space-y-2">
-              <Label htmlFor="firstName" className="text-white">
+              <Label htmlFor="firstName" className="text-slate-700 dark:text-slate-300">
                 First Name
               </Label>
               <Input
@@ -140,12 +140,12 @@ export default function QueryForm() {
                 placeholder="John"
                 value={formData.firstName}
                 onChange={handleInputChange}
-                className="bg-white border-slate-400 text-white placeholder:text-slate-800"
+                className="bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lastName" className="text-white">
+              <Label htmlFor="lastName" className="text-slate-700 dark:text-slate-300">
                 Last Name
               </Label>
               <Input
@@ -154,14 +154,14 @@ export default function QueryForm() {
                 placeholder="Doe"
                 value={formData.lastName}
                 onChange={handleInputChange}
-                className="bg-white border-slate-400 text-white placeholder:text-slate-800"
+                className="bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500"
                 required
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-white">
+            <Label htmlFor="email" className="text-slate-700 dark:text-slate-300">
               Email Address
             </Label>
             <Input
@@ -171,13 +171,13 @@ export default function QueryForm() {
               placeholder="john.doe@company.com"
               value={formData.email}
               onChange={handleInputChange}
-              className="bg-white border-slate-400 text-white placeholder:text-slate-800"
+              className="bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="company" className="text-white">
+            <Label htmlFor="company" className="text-slate-700 dark:text-slate-300">
               Company/Individual
             </Label>
             <Input
@@ -186,13 +186,13 @@ export default function QueryForm() {
               placeholder="Acme Inc."
               value={formData.company}
               onChange={handleInputChange}
-              className="bg-white border-slate-400 text-white placeholder:text-slate-800"
+              className="bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-white">
+            <Label htmlFor="message" className="text-slate-700 dark:text-slate-300">
               Your Query
             </Label>
             <Textarea
@@ -202,7 +202,7 @@ export default function QueryForm() {
               rows={4}
               value={formData.message}
               onChange={handleInputChange}
-              className="bg-white border-slate-400 text-white placeholder:text-slate-800"
+              className="bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500"
               required
             />
           </div>
@@ -215,7 +215,7 @@ export default function QueryForm() {
             {isSubmitting ? "Submitting Query..." : "Submit Query"}
           </Button>
 
-          <p className="text-xs text-slate-400 text-center">
+          <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
             By submitting this form, you agree to our privacy policy and terms of service.
           </p>
         </form>

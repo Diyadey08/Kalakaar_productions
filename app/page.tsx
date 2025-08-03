@@ -44,7 +44,7 @@ export default function Home() {
               <h1 className="text-blue-950 dark:text-white text-6xl md:text-8xl lg:text-[5rem] font-bold tracking-tight mt-4">
                 <AnimatedSplitText
                   text="Kalakaar"
-                  className="text-blue-950 dark:text-white text-6xl md:text-8xl lg:text-[5rem] tracking-tight"
+                  className="text-blue-950 dark:text-white text-4xl md:text-8xl lg:text-[5rem] tracking-tight"
                   variant="fade"
                   stagger={0.1}
                 />
