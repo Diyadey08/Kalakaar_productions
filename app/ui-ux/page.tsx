@@ -26,7 +26,7 @@ export default function CoursePage() {
       <KeyFeaturesSection />
       <CurriculumSection />
       <CareersSection careersImageY={careersImageY} />
-      <ProgramWorkSection />
+      
       
     </div>
   )
