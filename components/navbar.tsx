@@ -33,14 +33,14 @@ export default function Navbar() {
           <img
           src="/Kalakaar_logo_Dark.png"
           alt="Kalakaar Dark Logo"
-          className="h-[120px] w-auto object-contain"
+          className="h-[100px] w-auto object-contain mt-2"
         />
         
           ) : (
             <img
              src="Kalakaar logo light.png"
              alt="Kalakaar Dark Logo"
-             className="h-[120px] w-auto object-contain"
+             className="h-[100px] w-auto object-contain mt-2"
              />
           )}
         </Link>
