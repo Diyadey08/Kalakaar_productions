@@ -1,7 +1,12 @@
-/** @type {import('postcss-load-config').Config} */
+/** 
+ * @type {import('postcss-load-config').Config} 
+ * PostCSS configuration file using ESM format.
+ * This config enables Tailwind CSS as a PostCSS plugin.
+ */
 const config = {
   plugins: {
-    tailwindcss: {},
+    // Include Tailwind CSS as a PostCSS plugin
+    tailwindcss: {}, // Uses tailwind.config.ts by default
   },
 };
 
