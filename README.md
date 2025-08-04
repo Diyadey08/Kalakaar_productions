@@ -100,8 +100,11 @@ pnpm install
 pnpm dev
 
 ```
-# Visit the site
+## Visit the site
 [http://localhost:3000](http://localhost:3000)
+
+## Deployed site
+[Kalakaar School of Art and Design](https://kalakaar-productions.vercel.app/)
 
 ---
 
