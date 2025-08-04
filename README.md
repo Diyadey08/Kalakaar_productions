@@ -88,7 +88,7 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/kalakaar_productions.git
+git clone https://github.com/Diyadey08/Kalakaar_productions.git
 
 # Navigate to the directory
 cd kalakaar_productions
@@ -99,7 +99,8 @@ pnpm install
 # Run development server
 pnpm dev
 
-# Visit http://localhost:3000
+# Visit the site
+[http://localhost:3000](http://localhost:3000)
 ```
 
 ---
