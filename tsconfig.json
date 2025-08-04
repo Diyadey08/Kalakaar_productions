@@ -1,27 +1,67 @@
 {
   "compilerOptions": {
+    // Libraries to include during compilation
     "lib": ["dom", "dom.iterable", "esnext"],
+
+    // Allow JavaScript files to be compiled
     "allowJs": true,
+
+    // ECMAScript target version for the output JavaScript
     "target": "ES6",
+
+    // Skip type checking of all declaration files (*.d.ts)
     "skipLibCheck": true,
+
+    // Enable all strict type-checking options
     "strict": true,
+
+    // Do not emit output files; useful for type checking only
     "noEmit": true,
+
+    // Enables compatibility with CommonJS-style modules
     "esModuleInterop": true,
+
+    // Specify module code generation
     "module": "esnext",
+
+    // TypeScript module resolution strategy (modern bundler-style)
     "moduleResolution": "bundler",
+
+    // Allow importing JSON files as modules
     "resolveJsonModule": true,
+
+    // Ensure each file can be safely transpiled independently
     "isolatedModules": true,
+
+    // JSX code generation mode (used by frameworks like React)
     "jsx": "preserve",
+
+    // Enable incremental compilation for faster builds
     "incremental": true,
+
+    // TypeScript language service plugins
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Adds Next.js specific typings and tooling
       }
     ],
+
+    // Configure base URL path mappings
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"] // Allow imports using @/ as an alias for the root directory
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+
+  // Files to include in the project
+  "include": [
+    "next-env.d.ts", // Next.js environment types
+    "**/*.ts",       // All TypeScript files
+    "**/*.tsx",      // All TSX (React + TypeScript) files
+    ".next/types/**/*.ts" // Next.js generated type definitions
+  ],
+
+  // Exclude folders/files from the project
+  "exclude": [
+    "node_modules" // Exclude dependencies for performance and correctness
+  ]
 }
