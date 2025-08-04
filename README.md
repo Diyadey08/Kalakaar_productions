@@ -99,9 +99,9 @@ pnpm install
 # Run development server
 pnpm dev
 
+```
 # Visit the site
 [http://localhost:3000](http://localhost:3000)
-```
 
 ---
 
