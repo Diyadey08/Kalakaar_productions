@@ -28,31 +28,28 @@ export default function Home() {
       {/* <StructuredData /> */}
 
       <div className="flex flex-col">
-
         {/* Hero Section */}
         <section id="hero" className="relative flex items-center justify-center overflow-hidden">
           <CssGridBackground />
           <div className="container px-4 md:px-6 py-16 md:py-7">
-            <div className="flex flex-col items-center text-center max-w-4xl mx-auto  pt-2">
+            <div className="flex flex-col items-center text-center max-w-4xl mx-auto pt-2">
               
-            
               <div className="px-4 py-2 text-sm font-medium border-2 text-blue-950 dark:text-white mt-5 hover:border-orange-600 rounded-lg">
                 🎨 Creative Learning Platform
               </div>
+              <h1 className="text-4xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter mt-2  text-blue-950 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">
+                          <AnimatedSplitText 
+                            text="Kalakaar" 
+                            className="tracking-tight"
+                            variant="fade"
+                            stagger={0.1}
+                          />
+                        </h1>
 
-             
-              <h1 className="font-bold tracking-tighter mt-0 mb-5 text-blue-950 dark:text-white">
-           {/* Kalakaar - Bigger on all screens */}
-               <AnimatedSplitText 
-               text="Kalakaar" 
-               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight"
-               variant="fade"
-               stagger={0.1}
-               />
 
-           {/* School of Art & Design - Smaller on mobile */}
-             <div className="mt-4 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-medium">
-                  <AnimatedSplitText
+              {/* School of Art & Design - Smaller on mobile */}
+              <div className="mt-4 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-medium">
+                <AnimatedSplitText
                   text="School of Art & Design"
                   className="tracking-tight"
                   variant="slide"
@@ -66,14 +63,12 @@ export default function Home() {
                           ? 'text-[#246CF4]' 
                           : 'text-blue-950 dark:text-white'
                       }
-                                        >
-                              {word}
-                            </span>
-                          )}
-                        />
-                      </div>
-                    </h1>
-
+                    >
+                      {word}
+                    </span>
+                  )}
+                />
+              </div>
 
               {/* Tagline */}
               <p className="text-lg md:text-xl font-semibold mb-4">
@@ -88,25 +83,23 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mb-12">
-              <AnimatedSplitText
-                 text="Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and creators."
-                 className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl"
-                 variant="slide"
-                 stagger={0.02}
-                 splitBy="word"
-                 delay={0.5}
-               />
+                <AnimatedSplitText
+                  text="Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and creators."
+                  className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl"
+                  variant="slide"
+                  stagger={0.02}
+                  delay={0.5}
+                />
               </p>
-
 
               {/* Typing Input */}
               <TypingPromptInput />
 
               {/* CTA Button */}
               <div className="flex flex-wrap justify-center gap-4 mt-16">
-                <button className="relative inline-flex h-12 overflow-hidden rounded-sm p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                <button className="relative inline-flex h-12 overflow-hidden rounded-md p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-sm bg-blue-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-blue-700 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                     View All Courses
                   </span>
                 </button>
@@ -140,9 +133,10 @@ export default function Home() {
             </div>
 
             {/* Feature Cards */}
-            <div className="grid gap-8 lg:grid-cols-3 items-start">
+            <div className="grid gap-8 lg:grid-cols-3 items-start ">
               {/* Card 1 */}
-              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+              <div className="transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.03] flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg">
                   <Palette className="h-10 w-10" />
                 </div>
@@ -153,7 +147,9 @@ export default function Home() {
               </div>
 
               {/* Card 2 */}
-              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border border-blue-200 dark:border-blue-800 h-[22rem]">
+             
+              <div className="transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.03] flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+  
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg">
                   <GraduationCap className="h-10 w-10" />
                 </div>
@@ -164,7 +160,8 @@ export default function Home() {
               </div>
 
               {/* Card 3 */}
-              <div className="flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 border border-orange-200 dark:border-orange-800 h-[22rem]">
+              <div className="transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.03] flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg">
                   <Zap className="h-10 w-10" />
                 </div>

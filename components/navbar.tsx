@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Zap, ChevronDown } from "lucide-react"
+import { Menu, Zap, ChevronDown, BookOpen } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import coursesData from "@/data/courses.json"
 import { useTheme } from "next-themes"
@@ -23,81 +23,96 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="px-4 sm:px-6 md:px-8 flex h-20 items-center justify-between w-full max-w-screen-xl mx-auto">
-        {/* ✅ Logo on Left */}
-        <Link href="/" className="flex items-center" aria-label="Kalakaar Homepage">
-          {resolvedTheme === "dark" ? (
-            <img
-              src="/Kalakaar_logo_Dark.png"
-              alt="Kalakaar Dark Logo"
-              className="h-20 sm:h-16 md:h-20 w-auto object-contain"
-            />
-          ) : (
-            <img
-              src="/Kalakaar logo light.png"
-              alt="Kalakaar Light Logo"
-              className="h-20 sm:h-16 md:h-20 w-auto object-contain"
-            />
-          )}
-        </Link>
+      <div className="relative flex h-20 items-center justify-between px-2 sm:px-4 md:px-6 max-w-screen-xl mx-auto w-full ">
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-6 items-center" aria-label="Main Navigation">
-          {/* Courses Dropdown */}
-          <div 
-            className="relative group"
-            onMouseEnter={() => setIsCoursesOpen(true)}
-            onMouseLeave={() => setIsCoursesOpen(false)}
-          >
-            <button className="flex items-center gap-1 text-lg font-medium transition-colors hover:text-primary">
-              Courses
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} />
-            </button>
+        {/* ✅ Logo aligned rightward slightly */}
+        <div className="flex items-center justify-start mr-20">
+          <Link href="/" aria-label="Kalakaar Homepage">
+            {resolvedTheme === "dark" ? (
+              <img
+                src="/Kalakaar_logo_Dark.png"
+                alt="Kalakaar Dark Logo"
+                className="h-[100px] w-auto object-contain mt-2"
+              />
+            ) : (
+              <img
+                src="/Kalakaar logo light.png"
+                alt="Kalakaar Light Logo"
+                className="h-[100px] w-auto object-contain mt-2"
+              />
+            )}
+          </Link>
+        </div>
 
-            {/* Dropdown */}
-            <div className={`absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border rounded-lg shadow-lg transition-all duration-200 ${
-              isCoursesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-            }`}>
-              <div className="p-4 grid grid-cols-2 gap-3">
-                {courses.map((course) => (
-                  <Link
-                    key={course.id}
-                    href={course.href}
-                    className="group/item flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
-                  >
-                    <span className="text-xl">{course.icon}</span>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-sm group-hover/item:text-primary transition-colors">
-                        {course.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                        {course.description}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
+        {/* ✅ Desktop Centered Navigation */}
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+          <nav className="flex gap-6 items-center" aria-label="Main Navigation">
+            {/* Courses Dropdown */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setIsCoursesOpen(true)}
+              onMouseLeave={() => setIsCoursesOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-lg font-medium transition-colors hover:text-primary">
+                Courses
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* Dropdown */}
+              <div className={`absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border rounded-lg shadow-lg transition-all duration-200 ${
+                isCoursesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+              }`}>
+                <div className="p-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    {courses.map((course) => (
+                      <Link
+                        key={course.id}
+                        href={course.href}
+                        className="group/item flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                      >
+                        <span className="text-xl">{course.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-medium text-sm group-hover/item:text-primary transition-colors">
+                            {course.title}
+                          </h3>
+                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                            {course.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-3 border-t">
+                    <Link
+                      href="/courses"
+                      className="flex items-center justify-center gap-2 p-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors border border-primary/20 rounded-lg"
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      View All Courses
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Other nav items */}
-          {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className="text-lg font-medium transition-colors hover:text-primary">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+            {/* Other nav items */}
+            {navItems.map((item, index) => (
+              <Link key={index} href={item.href} className="text-lg font-medium transition-colors hover:text-primary">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        {/* Theme toggle + mobile menu */}
-        <div className="flex items-center gap-4">
+        {/* ✅ Right: Theme toggle + Mobile menu toggle */}
+        <div className="flex items-center gap-3 ml-auto">
           <ThemeToggle />
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon" aria-label="Open Menu">
+              <Button variant="outline" size="icon" aria-label="Open Menu" className="ml-2">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
@@ -120,6 +135,14 @@ export default function Navbar() {
                         </div>
                       </Link>
                     ))}
+                    <Link
+                      href="/courses"
+                      className="flex items-center justify-center gap-2 mt-2 p-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors border border-primary/20 rounded-lg"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      View All Courses
+                    </Link>
                   </div>
                 </div>
 
@@ -135,7 +158,7 @@ export default function Navbar() {
                   </Link>
                 ))}
 
-                {/* Mobile button */}
+                {/* Mobile CTA Button */}
                 <div className="flex items-center gap-4 mt-4">
                   <ThemeToggle />
                   <Button
