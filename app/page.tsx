@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+
 import {
   Palette,
   BookOpen,
@@ -11,13 +11,10 @@ import {
 import ContactForm from "@/components/contact-form";
 import Testimonials from "@/components/testimonials";
 import UseCases from "@/components/use-cases";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import TypingPromptInput from "@/components/typing-prompt-input";
 import CssGridBackground from "@/components/css-grid-background";
-import FeaturesSection from "@/components/features-section";
-import StructuredData from "@/components/structured-data";
-import { ShimmerButton } from "@/components/magicui/shimmer-button";
+
 import AnimatedSplitText from "@/components/ui/animated-split-text";
 import Component from "@/components/founder-section";
 import CarouselDemo from "@/components/feature-section";

@@ -6,8 +6,8 @@ import { HeroSection } from "@/app/ui-ux/hero-section"
 import { KeyFeaturesSection } from "@/app/ui-ux/key-features-section"
 import { CurriculumSection } from "@/app/ui-ux/curriculum-section"
 import { CareersSection } from "@/app/ui-ux/career-section"
-import { ProgramWorkSection } from "@/app/ui-ux/program-work-section"
-import { PlacementSupportSection } from "@/app/ui-ux/placement-support-section"
+
+
 
 export default function CoursePage() {
   const containerRef = useRef(null)
