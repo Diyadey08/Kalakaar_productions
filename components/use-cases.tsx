@@ -113,18 +113,26 @@ export default function UseCases() {
             <motion.div key={index} variants={itemVariants}>
               <div className="relative overflow-hidden rounded-lg p-[1px] h-full group cursor-pointer">
                 <span className="absolute inset-[-1000%] animate-[spin_8s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#1e40af_0%,#3b82f6_25%,#60a5fa_50%,#93c5fd_75%,#1e40af_100%)] opacity-75 group-hover:opacity-100 transition-opacity duration-1000" />
-                <Card className="relative h-full bg-white dark:bg-gray-900 border-0 transition-all duration-1000 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/30 rounded-lg transform group-hover:scale-[1.02] group-hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
-                  <CardHeader className="pb-2 relative z-10 transform group-hover:translate-y-[-2px] transition-transform duration-300">
-                    <div className="transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                      <FrostedGlassIcon icon={useCase.icon} color={useCase.accentColor} className="mb-4" />
-                    </div>
-                    <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{useCase.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="relative z-10">
-                    <CardDescription className="text-base group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">{useCase.description}</CardDescription>
-                  </CardContent>
+              
+                <Card className="relative h-full bg-white dark:bg-gray-900 border-0 rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-400/30 duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/20 dark:to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
+
+                      <CardHeader className="pb-2 relative z-10 transition-transform duration-300 hover:-translate-y-1">
+                        <div className="transition-transform duration-300 hover:scale-110 hover:rotate-3">
+                          {useCase.icon}
+                        </div>
+                        <CardTitle className="transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400">
+                          {useCase.title}
+                        </CardTitle>
+                      </CardHeader>
+
+                      <CardContent className="relative z-10">
+                        <CardDescription className="text-base transition-colors duration-300 hover:text-gray-700 dark:hover:text-gray-300">
+                          {useCase.description}
+                        </CardDescription>
+                      </CardContent>
                 </Card>
+
               </div>
             </motion.div>
           ))}

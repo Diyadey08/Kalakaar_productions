@@ -1,15 +1,13 @@
-"use client"
+'use client'
 
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Zap, Palette, BookOpen, ChevronDown } from "lucide-react"
+import { Menu, Zap, ChevronDown, BookOpen } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
-import {KalakaarLogo} from "@/assets/logo"
 import coursesData from "@/data/courses.json"
 import { useTheme } from "next-themes"
-
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -25,105 +23,101 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-between">
-        <div className="flex items-center gap-2">
-           {/* ✅ Logo Section */}
-        <Link href="/" className="flex items-center" aria-label="Kalakaar Homepage">
-         {resolvedTheme === "dark" ? (
-          <img
-          src="/Kalakaar_logo_Dark.png"
-          alt="Kalakaar Dark Logo"
-          className="h-[100px] w-auto object-contain mt-2"
-        />
-        
-          ) : (
-            <img
-             src="Kalakaar logo light.png"
-             alt="Kalakaar Dark Logo"
-             className="h-[100px] w-auto object-contain mt-2"
-             />
-          )}
-        </Link>
+      <div className="relative flex h-20 items-center justify-between px-2 sm:px-4 md:px-6 max-w-screen-xl mx-auto w-full ">
+
+        {/* ✅ Logo aligned rightward slightly */}
+        <div className="flex items-center justify-start mr-20">
+          <Link href="/" aria-label="Kalakaar Homepage">
+            {resolvedTheme === "dark" ? (
+              <img
+                src="/Kalakaar_logo_Dark.png"
+                alt="Kalakaar Dark Logo"
+                className="h-[100px] w-auto object-contain mt-2"
+              />
+            ) : (
+              <img
+                src="/Kalakaar logo light.png"
+                alt="Kalakaar Light Logo"
+                className="h-[100px] w-auto object-contain mt-2"
+              />
+            )}
+          </Link>
         </div>
 
-        <nav className="hidden md:flex gap-6 items-center" aria-label="Main Navigation">
-          {/* Courses Dropdown */}
-          <div 
-            className="relative group"
-            onMouseEnter={() => setIsCoursesOpen(true)}
-            onMouseLeave={() => setIsCoursesOpen(false)}
-          >
-            <button className="flex items-center gap-1 text-lg font-medium transition-colors hover:text-primary">
-              Courses
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} />
-            </button>
-            
-            {/* Dropdown Menu */}
-            <div className={`absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border rounded-lg shadow-lg transition-all duration-200 ${
-              isCoursesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-            }`}>
-              <div className="p-4">
-                <div className="grid grid-cols-2 gap-3">
-                  {courses.map((course) => (
+        {/* ✅ Desktop Centered Navigation */}
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+          <nav className="flex gap-6 items-center" aria-label="Main Navigation">
+            {/* Courses Dropdown */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setIsCoursesOpen(true)}
+              onMouseLeave={() => setIsCoursesOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-lg font-medium transition-colors hover:text-primary">
+                Courses
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* Dropdown */}
+              <div className={`absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border rounded-lg shadow-lg transition-all duration-200 ${
+                isCoursesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+              }`}>
+                <div className="p-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    {courses.map((course) => (
+                      <Link
+                        key={course.id}
+                        href={course.href}
+                        className="group/item flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                      >
+                        <span className="text-xl">{course.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-medium text-sm group-hover/item:text-primary transition-colors">
+                            {course.title}
+                          </h3>
+                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                            {course.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-3 border-t">
                     <Link
-                      key={course.id}
-                      href={course.href}
-                      className="group/item flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                      href="/courses"
+                      className="flex items-center justify-center gap-2 p-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors border border-primary/20 rounded-lg"
                     >
-                      <span className="text-xl">{course.icon}</span>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-medium text-sm group-hover/item:text-primary transition-colors">
-                          {course.title}
-                        </h3>
-                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                          {course.description}
-                        </p>
-                      </div>
+                      <BookOpen className="h-4 w-4" />
+                      View All Courses
                     </Link>
-                  ))}
-                </div>
-                <div className="mt-4 pt-3 border-t">
-                  <Link
-                    href="/courses"
-                    className="flex items-center justify-center gap-2 text-sm text-primary hover:text-primary/80 font-medium transition-colors"
-                  >
-                    <BookOpen className="h-4 w-4" />
-                    View All Courses
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className="text-lg font-medium transition-colors hover:text-primary">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+            {/* Other nav items */}
+            {navItems.map((item, index) => (
+              <Link key={index} href={item.href} className="text-lg font-medium transition-colors hover:text-primary">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        <div className="flex items-center gap-4">
+        {/* ✅ Right: Theme toggle + Mobile menu toggle */}
+        <div className="flex items-center gap-3 ml-auto">
           <ThemeToggle />
 
-          {/* <Link href="#contact" className="hidden md:block">
-            <button className="relative inline-flex h-12 overflow-hidden rounded-sm p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-sm bg-blue-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                View Courses
-              </span>
-            </button>
-          </Link> */}
-
+          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon" aria-label="Open Menu">
+              <Button variant="outline" size="icon" aria-label="Open Menu" className="ml-2">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8" aria-label="Mobile Navigation">
-                {/* Mobile Courses Section */}
+                {/* Mobile Courses */}
                 <div className="border-b pb-4 mb-4">
                   <h3 className="text-lg font-semibold mb-3 text-primary">Courses</h3>
                   <div className="grid gap-2">
@@ -152,6 +146,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
+                {/* Other mobile nav links */}
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
@@ -162,6 +157,8 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 ))}
+
+                {/* Mobile CTA Button */}
                 <div className="flex items-center gap-4 mt-4">
                   <ThemeToggle />
                   <Button
