@@ -369,9 +369,9 @@ export function CurriculumSection() {
 
   return (
     <section className="w-full bg-v0-dark-purple text-v0-text-light py-16 md:py-24 lg:py-32">
-      <div className="container grid md:grid-cols-2 gap-12">
+      <div className="container grid md:grid-cols-2 gap-12 items-start">
         {/* Left Section: Skills You'll Master with dynamic illustration */}
-        <div className="space-y-6 md:space-y-8 sticky top-0 h-fit md:h-screen md:py-24">
+        <div className="space-y-6 md:space-y-8 sticky top-24 self-start">
           <Badge variant="secondary" className="px-3 py-1 text-sm bg-[#246CF4]/20 text-[#246CF4]">
             CURRICULUM
           </Badge>
@@ -385,7 +385,7 @@ export function CurriculumSection() {
           </p>
           <div className="relative w-full h-64 md:h-96 flex items-center justify-center bg-gradient-to-br from-[#246CF4]/20 to-[#246CF4]/30 rounded-xl p-4 overflow-hidden">
             <Image
-              src="/placeholder.svg?height=300&width=400"
+              src="/uiUx 2nd.webp"
               alt="Design Process Illustration"
               width={400}
               height={300}

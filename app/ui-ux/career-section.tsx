@@ -15,15 +15,31 @@ export function CareersSection({ careersImageY }: CareersSectionProps) {
   ]
 
   return (
-    <section className="relative w-full bg-v0-dark-purple text-v0-text-light py-16 md:py-24 lg:py-32 overflow-hidden">
-      <div className="container grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6 md:space-y-8 z-10">
+    <section className="relative w-full bg-v0-dark-purple text-v0-text-light py-16 md:py-20 lg:py-24 overflow-hidden">
+      <div className="container grid md:grid-cols-2 gap-12 items-start">
+        <div className="space-y-3 md:space-y-4 z-10 pt-4 md:pt-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#246CF4]">
             Build better careers with Us
           </h2>
           <p className="text-base md:text-lg text-v0-text-light max-w-md">
             Agileology gives you hands-on learning, guided support, and skills that stick.
           </p>
+          
+          <div className="flex flex-wrap justify-center gap-10 mt-8">
+            <button className="relative inline-flex h-12 overflow-hidden rounded-md p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-blue-700 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl transition-colors duration-300 group-hover:bg-[#246CF4]">
+                Enroll Now
+              </span>
+            </button>
+            <button className="relative inline-flex h-12 overflow-hidden rounded-md p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-blue-700 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl transition-colors duration-300 group-hover:bg-[#246CF4]">
+                Enquire Now
+              </span>
+            </button>
+          </div>
+          
           {/* <div className="grid grid-cols-3 gap-6 pt-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -36,8 +52,8 @@ export function CareersSection({ careersImageY }: CareersSectionProps) {
         <div className="relative flex justify-center items-center h-[400px] md:h-[500px] lg:h-[600px]">
           <motion.div style={{ y: careersImageY }} className="absolute w-full h-full flex justify-center items-center">
             <Image
-              src="/placeholder.svg?height=600&width=800"
-              alt="Career Growth Illustration"
+              src="/https___corcel.b-cdn.net_ca629a1a-9f6d-495a-9bee-738bc73026fd.webp"
+              alt="Student learning UI/UX design with laptop and design tools"
               width={800}
               height={600}
               className="object-contain w-full h-full"

@@ -60,7 +60,7 @@ export function HeroSection({ heroImageY }: HeroSectionProps) {
         <div className="relative flex justify-center items-center h-[400px] md:h-[500px] lg:h-[600px]">
           <motion.div style={{ y: heroImageY }} className="absolute w-full h-full flex justify-center items-center">
             <Image
-              src="/placeholder.svg?height=600&width=800"
+              src="/Ui-Ux-1st.webp"
               alt="AI-Driven UI/UX Design Tools"
               width={800}
               height={600}
