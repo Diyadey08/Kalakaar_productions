@@ -6,17 +6,17 @@ export default function CarouselDemo() {
     {
       title: "UI UX Design",
       button: "Explore Course",
-      src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/course_1662637290-1.jpg",
     },
     {
       title: "Fashion Designing",
       button: "Explore Course",
-      src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/fashion-designing-institute-in-Kolkata.webp",
     },
     {
       title: "Video Editing",
       button: "Explore Course",
-      src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/Video-Editing-Course-Perinthalmanna_magic.jpeg",
     },
     {
       title: "",
