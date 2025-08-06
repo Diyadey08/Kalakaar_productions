@@ -3,24 +3,25 @@
 import Carousel from "@/components/ui/carousel";
 export default function CarouselDemo() {
   const slideData = [
+    
+    {
+      title: "Fashion Designing",
+      button: "Coming Soon",
+      src: "/Fashion_Design_Landing.webp",
+    },
     {
       title: "UI UX Design",
       button: "Explore Course",
-      src: "/course_1662637290-1.jpg",
-    },
-    {
-      title: "Fashion Designing",
-      button: "Explore Course",
-      src: "/fashion-designing-institute-in-Kolkata.webp",
+      src: "/Ui-Landing.webp",
     },
     {
       title: "Video Editing",
-      button: "Explore Course",
+      button: "Coming Soon",
       src: "/Video-Editing-Course-Perinthalmanna_magic.jpeg",
     },
     {
       title: "",
-      button: "Explore Course",
+      button: "Coming Soon",
       src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
