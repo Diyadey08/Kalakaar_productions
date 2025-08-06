@@ -100,9 +100,9 @@ export default function Component() {
             {/* Left Content - More Compact */}
             <div className="p-6 lg:p-8 space-y-6">
               <div className="space-y-4 text-foreground leading-relaxed">
-                <p className="text-base lg:text-lg font-medium mt-10">
-            Sai Santosh is a passionate designer, artist, and educator with a strong background in UX/UI and visual arts. As the founder of Kalakaar, he aims to bridge the gap between creativity and career by guiding students and enthusiasts in art, design, and innovation.
-             </p>
+                <p className="text-base lg:text-lg font-medium">
+                  <span className="text-3xl lg:text-3xl font-black">Sai Santosh</span> is a passionate designer, artist, and educator with a strong background in UX/UI and visual arts. As the founder of Kalakaar, he aims to bridge the gap between creativity and career by guiding students and enthusiasts in art, design, and innovation.
+                </p>
                 <p className="text-sm lg:text-base text-muted-foreground">
            He shares his personal journey, experiences, and knowledge in regional languages to make learning more relatable and accessible. His vision is to establish Kalakaar as a frontline field just like STEM and make creative education available to everyone, regardless of background.
                 </p>
