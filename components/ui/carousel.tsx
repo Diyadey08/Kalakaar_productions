@@ -117,7 +117,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           
 
           <div className="flex justify-center  pb-2"> 
--          
+        
                <button className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-md bg-blue-700 px-5 py-3 text-base font-medium text-white backdrop-blur-3xl min-w-[160px] min-h-[48px]">
                      {button}
                </button>
