@@ -93,7 +93,7 @@ export default function UseCases() {
         >
           <div className="space-y-2">
             
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">🎯 Who We Serve</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"> Who We Serve</h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
               Tailored learning experiences for every creative journey and career path.
             </p>

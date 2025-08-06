@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -12,7 +12,12 @@ import { useTheme } from "next-themes"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isCoursesOpen, setIsCoursesOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { resolvedTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navItems = [
     { label: "Testimonials", href: "#testimonials" },
@@ -21,6 +26,9 @@ export default function Navbar() {
 
   const courses = coursesData.courses
 
+  // During initial load, default to dark theme to prevent flash
+  const isDark = !mounted ? true : resolvedTheme === "dark"
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="relative flex h-20 items-center justify-between px-2 sm:px-4 md:px-6 max-w-screen-xl mx-auto w-full ">
@@ -28,7 +36,7 @@ export default function Navbar() {
         {/* ✅ Logo aligned rightward slightly */}
         <div className="flex items-center justify-start mr-20">
           <Link href="/" aria-label="Kalakaar Homepage">
-            {resolvedTheme === "dark" ? (
+            {isDark ? (
               <img
                 src="/Kalakaar_logo_Dark.png"
                 alt="Kalakaar Dark Logo"
