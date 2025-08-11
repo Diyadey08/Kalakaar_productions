@@ -14,10 +14,10 @@ export function HeroSection({ heroImageY }: HeroSectionProps) {
     <section className="relative w-full bg-v0-dark-purple text-v0-text-light py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="container grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6 md:space-y-8 z-10">
-          <h2 className="text-lg md:text-xl font-semibold text-[#246CF4]">
+          <h2 className="text-lg md:text-xl font-semibold text-black dark:text-white">
             Advanced Certification in AI-Driven UI/UX Design
           </h2>
-          <h1 className="text-3xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl  font-bold leading-tight text-[#246CF4]">
+          <h1 className="text-3xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl  font-bold leading-tight text-black dark:text-white">
             Be a Certified Design Innovator
           </h1>
           <p className="text-base md:text-lg text-v0-text-light max-w-md">
@@ -48,7 +48,7 @@ export function HeroSection({ heroImageY }: HeroSectionProps) {
             <span className="text-sm md:text-base text-v0-text-light">from 976+ reviews</span>
           </div>
           <div className="space-y-2">
-            <h3 className="text-base md:text-lg font-semibold text-[#246CF4]">Tools we covered:</h3>
+            <h3 className="text-base md:text-lg font-semibold text-black dark:text-white">Tools we covered:</h3>
             <div className="flex gap-4">
               <Image src="/placeholder.svg?height=32&width=32" width={32} height={32} alt="Figma" />
               <Image src="/placeholder.svg?height=32&width=32" width={32} height={32} alt="Adobe XD" />

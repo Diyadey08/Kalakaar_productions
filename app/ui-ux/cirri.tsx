@@ -370,63 +370,94 @@ export function CurriculumSection() {
 
   const timelineData = courseData.curriculum.flatMap((month) =>
     month.weeks.map((week, weekIndex) => ({
-      title: `Month ${month.month}: ${month.monthTitle}`,
+      title: `Week ${week.week}: ${week.weekTitle}`,
       content: (
         <div
           key={weekIndex}
-          className="group relative bg-gradient-to-br from-white/5 to-white/10 rounded-xl p-6 md:p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-[#246CF4] transition-all duration-300 ease-in-out transform hover:-translate-y-2"
+          className="group relative bg-gradient-to-br from-white/5 to-white/10 dark:from-white/5 dark:to-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-xl border border-white/20 dark:border-white/20 hover:border-[#246CF4]/50 dark:hover:border-[#246CF4]/50 transition-all duration-500 ease-out transform hover:scale-[1.01] hover:shadow-[#246CF4]/20 bg-white/95 dark:bg-transparent max-w-4xl mx-auto"
         >
           <div className="mb-4">
+            <Badge variant="secondary" className="text-xs px-3 py-1 bg-[#246CF4]/20 text-[#246CF4] border border-[#246CF4]/30 font-medium mb-3">
+              Month {month.month}: {month.monthTitle}
+            </Badge>
             <h3 className="text-xl md:text-2xl font-bold text-[#246CF4] mb-1">Week {week.week}</h3>
-            <h4 className="text-2xl md:text-3xl font-bold text-white">{week.weekTitle}</h4>
+            <h4 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white/90">{week.weekTitle}</h4>
           </div>
-          <ul className="space-y-3">
-            {week.topics &&
-              week.topics.map((topic, topicIndex) => (
-                <li key={topicIndex} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                  <span className="text-base md:text-lg text-v0-text-light">{topic}</span>
-                </li>
-              ))}
-            {week.userResearch?.qualitative && (
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                <span className="text-base md:text-lg text-v0-text-light">
-                  <span className="font-semibold">Qualitative Research:</span> {week.userResearch.qualitative.join(", ")}
-                </span>
-              </li>
+          
+          <div className="space-y-4">
+            {/* Topics Section */}
+            {week.topics && week.topics.length > 0 && (
+              <div className="bg-gray-50/80 dark:bg-white/5 rounded-lg p-4 border border-gray-200/50 dark:border-white/10">
+                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-[#246CF4]">
+                  📚 Topics Covered
+                </h5>
+                <div className="space-y-2 max-h-48 overflow-y-auto">
+                  {week.topics.slice(0, 5).map((topic, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700 dark:text-white/80 leading-relaxed">{topic}</span>
+                    </div>
+                  ))}
+                  {week.topics.length > 5 && (
+                    <div className="text-xs text-gray-500 dark:text-white/60 italic">
+                      +{week.topics.length - 5} more topics...
+                    </div>
+                  )}
+                </div>
+              </div>
             )}
-            {week.userResearch?.quantitative && (
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                <span className="text-base md:text-lg text-v0-text-light">
-                  <span className="font-semibold">Quantitative Research:</span> {week.userResearch.quantitative.join(", ")}
-                </span>
-              </li>
+
+            {/* Research Methods - Compact */}
+            {(week as any).userResearch && (
+              <div className="bg-gray-50/80 dark:bg-white/5 rounded-lg p-4 border border-gray-200/50 dark:border-white/10">
+                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-[#246CF4]">
+                  🔍 Research Methods
+                </h5>
+                <div className="grid md:grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <span className="font-medium text-gray-800 dark:text-white/90">Qualitative:</span>
+                    <span className="text-gray-700 dark:text-white/80 ml-2">
+                      {(week as any).userResearch.qualitative.slice(0, 2).join(", ")}
+                      {(week as any).userResearch.qualitative.length > 2 && "..."}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-gray-800 dark:text-white/90">Quantitative:</span>
+                    <span className="text-gray-700 dark:text-white/80 ml-2">
+                      {(week as any).userResearch.quantitative.join(", ")}
+                    </span>
+                  </div>
+                </div>
+              </div>
             )}
-            {week.empathyMapping && (
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                <span className="text-base md:text-lg text-v0-text-light">
-                  <span className="font-semibold">Empathy Mapping:</span> {week.empathyMapping.join(", ")}
-                </span>
-              </li>
+
+            {/* Tasks Section - Compact */}
+            {(week.task || (week as any).empathyTask) && (
+              <div className="bg-gradient-to-r from-[#246CF4]/10 to-purple-500/10 rounded-lg p-4 border border-[#246CF4]/30">
+                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-[#246CF4]">
+                  🎯 Tasks & Assignments
+                </h5>
+                <div className="space-y-2 text-sm">
+                  {week.task && (
+                    <div className="bg-white/50 dark:bg-white/5 p-3 rounded-lg">
+                      <span className="font-medium text-[#246CF4] block mb-1">Main Task:</span>
+                      <span className="text-gray-700 dark:text-white/90 leading-relaxed">
+                        {week.task.length > 100 ? `${week.task.substring(0, 100)}...` : week.task}
+                      </span>
+                    </div>
+                  )}
+                  {(week as any).empathyTask && (
+                    <div className="bg-white/50 dark:bg-white/5 p-3 rounded-lg">
+                      <span className="font-medium text-purple-600 dark:text-purple-400 block mb-1">Empathy Task:</span>
+                      <span className="text-gray-700 dark:text-white/90 leading-relaxed">
+                        {(week as any).empathyTask.length > 100 ? `${(week as any).empathyTask.substring(0, 100)}...` : (week as any).empathyTask}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
             )}
-            {week.task && (
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                <span className="text-base md:text-lg text-v0-text-light font-semibold">Task: {week.task}</span>
-              </li>
-            )}
-            {week.empathyTask && (
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
-                <span className="text-base md:text-lg text-v0-text-light font-semibold">
-                  Empathy Task: {week.empathyTask}
-                </span>
-              </li>
-            )}
-          </ul>
+          </div>
         </div>
       ),
     }))
@@ -468,8 +499,21 @@ export function CurriculumSection() {
         </div>
 
         {/* Timeline of Week Details (now below the main section) */}
-        <div className="space-y-8">
-          <Timeline data={timelineData} />
+        <div className="space-y-8 overflow-hidden">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-[#246CF4]/20 text-[#246CF4] border border-[#246CF4]/30 mb-8">
+              DETAILED CURRICULUM
+            </Badge>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#246CF4] mb-6">
+              Week-by-Week Learning Path
+            </h3>
+            <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+              Follow our comprehensive 16-week journey designed to transform you from a beginner to a professional UX designer
+            </p>
+          </div>
+          <div className="max-w-6xl mx-auto">
+            <Timeline data={timelineData} />
+          </div>
         </div>
       </div>
     </section>

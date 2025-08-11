@@ -4,9 +4,9 @@ import { useRef } from "react"
 import { useScroll, useTransform } from "framer-motion"
 import { HeroSection } from "@/app/ui-ux/hero-section"
 import { KeyFeaturesSection } from "@/app/ui-ux/key-features-section"
-import { CurriculumSection } from "@/app/ui-ux/curriculum-section"
+//import { CurriculumSection } from "@/app/ui-ux/curriculum-section"
 import { CareersSection } from "@/app/ui-ux/career-section"
-
+import { CurriculumSection } from "@/app/ui-ux/cirri"
 
 
 export default function CoursePage() {
