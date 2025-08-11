@@ -374,32 +374,32 @@ export function CurriculumSection() {
       content: (
         <div
           key={weekIndex}
-          className="group relative bg-gradient-to-br from-white/5 to-white/10 dark:from-white/5 dark:to-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-xl border border-white/20 dark:border-white/20 hover:border-[#246CF4]/50 dark:hover:border-[#246CF4]/50 transition-all duration-500 ease-out transform hover:scale-[1.01] hover:shadow-[#246CF4]/20 bg-white/95 dark:bg-transparent max-w-4xl mx-auto"
-        >
+          className="group relative bg-gradient-to-br from-blue-500/10 to-blue-600/20 dark:bg-gradient-to-br dark:from-blue-500/10 dark:to-blue-600/20 rounded-xl p-6 md:p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-[#246CF4] transition-all duration-300 ease-in-out transform hover:-translate-y-2"
+         >
           <div className="mb-4">
-            <Badge variant="secondary" className="text-xs px-3 py-1 bg-[#246CF4]/20 text-[#246CF4] border border-[#246CF4]/30 font-medium mb-3">
+            <Badge variant="secondary" className="text-xs px-3 py-1 bg-blue-500/20 text-black dark:text-white border border-blue-500/30 font-medium mb-3">
               Month {month.month}: {month.monthTitle}
             </Badge>
-            <h3 className="text-xl md:text-2xl font-bold text-[#246CF4] mb-1">Week {week.week}</h3>
-            <h4 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white/90">{week.weekTitle}</h4>
+            <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-1">Week {week.week}</h3>
+            <h4 className="text-lg md:text-xl font-semibold text-black dark:text-white">{week.weekTitle}</h4>
           </div>
           
           <div className="space-y-4">
             {/* Topics Section */}
             {week.topics && week.topics.length > 0 && (
               <div className="bg-gray-50/80 dark:bg-white/5 rounded-lg p-4 border border-gray-200/50 dark:border-white/10">
-                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-[#246CF4]">
+                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-black dark:text-white">
                   📚 Topics Covered
                 </h5>
                 <div className="space-y-2 max-h-48 overflow-y-auto">
                   {week.topics.slice(0, 5).map((topic, index) => (
                     <div key={index} className="flex items-start gap-2 text-sm">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-white/80 leading-relaxed">{topic}</span>
+                      <span className="text-black dark:text-white leading-relaxed">{topic}</span>
                     </div>
                   ))}
                   {week.topics.length > 5 && (
-                    <div className="text-xs text-gray-500 dark:text-white/60 italic">
+                    <div className="text-xs text-black dark:text-white italic">
                       +{week.topics.length - 5} more topics...
                     </div>
                   )}
@@ -410,20 +410,20 @@ export function CurriculumSection() {
             {/* Research Methods - Compact */}
             {(week as any).userResearch && (
               <div className="bg-gray-50/80 dark:bg-white/5 rounded-lg p-4 border border-gray-200/50 dark:border-white/10">
-                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-[#246CF4]">
+                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-black dark:text-white">
                   🔍 Research Methods
                 </h5>
                 <div className="grid md:grid-cols-2 gap-3 text-sm">
                   <div>
-                    <span className="font-medium text-gray-800 dark:text-white/90">Qualitative:</span>
-                    <span className="text-gray-700 dark:text-white/80 ml-2">
+                    <span className="font-medium text-black dark:text-white">Qualitative:</span>
+                    <span className="text-black dark:text-white ml-2">
                       {(week as any).userResearch.qualitative.slice(0, 2).join(", ")}
                       {(week as any).userResearch.qualitative.length > 2 && "..."}
                     </span>
                   </div>
                   <div>
-                    <span className="font-medium text-gray-800 dark:text-white/90">Quantitative:</span>
-                    <span className="text-gray-700 dark:text-white/80 ml-2">
+                    <span className="font-medium text-black dark:text-white">Quantitative:</span>
+                    <span className="text-black dark:text-white ml-2">
                       {(week as any).userResearch.quantitative.join(", ")}
                     </span>
                   </div>
@@ -433,23 +433,23 @@ export function CurriculumSection() {
 
             {/* Tasks Section - Compact */}
             {(week.task || (week as any).empathyTask) && (
-              <div className="bg-gradient-to-r from-[#246CF4]/10 to-purple-500/10 rounded-lg p-4 border border-[#246CF4]/30">
-                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-[#246CF4]">
+              <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/20 rounded-lg p-4 border border-blue-500/30">
+                <h5 className="text-base font-semibold mb-3 flex items-center gap-2 text-black dark:text-white">
                   🎯 Tasks & Assignments
                 </h5>
                 <div className="space-y-2 text-sm">
                   {week.task && (
                     <div className="bg-white/50 dark:bg-white/5 p-3 rounded-lg">
-                      <span className="font-medium text-[#246CF4] block mb-1">Main Task:</span>
-                      <span className="text-gray-700 dark:text-white/90 leading-relaxed">
+                      <span className="font-medium text-black dark:text-white block mb-1">Main Task:</span>
+                      <span className="text-black dark:text-white leading-relaxed">
                         {week.task.length > 100 ? `${week.task.substring(0, 100)}...` : week.task}
                       </span>
                     </div>
                   )}
                   {(week as any).empathyTask && (
                     <div className="bg-white/50 dark:bg-white/5 p-3 rounded-lg">
-                      <span className="font-medium text-purple-600 dark:text-purple-400 block mb-1">Empathy Task:</span>
-                      <span className="text-gray-700 dark:text-white/90 leading-relaxed">
+                      <span className="font-medium text-black dark:text-white block mb-1">Empathy Task:</span>
+                      <span className="text-black dark:text-white leading-relaxed">
                         {(week as any).empathyTask.length > 100 ? `${(week as any).empathyTask.substring(0, 100)}...` : (week as any).empathyTask}
                       </span>
                     </div>
@@ -470,10 +470,10 @@ export function CurriculumSection() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-16">
           {/* Text content */}
           <div className="space-y-6 md:space-y-8 md:max-w-xl">
-            <Badge variant="secondary" className="px-3 py-1 text-sm bg-[#246CF4]/20 text-[#246CF4]">
+            <Badge variant="secondary" className="px-3 py-1 text-sm bg-blue-500/20 text-black dark:text-white">
               CURRICULUM
             </Badge>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#246CF4]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black dark:text-white">
               Skills You&apos;ll Master
             </h2>
             <p className="text-base md:text-lg text-v0-text-light max-w-md">
@@ -501,10 +501,10 @@ export function CurriculumSection() {
         {/* Timeline of Week Details (now below the main section) */}
         <div className="space-y-8 overflow-hidden">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="px-4 py-2 text-sm bg-[#246CF4]/20 text-[#246CF4] border border-[#246CF4]/30 mb-8">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-blue-500/20 text-black dark:text-white border border-blue-500/30 mb-8">
               DETAILED CURRICULUM
             </Badge>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#246CF4] mb-6">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-black dark:text-white mb-6">
               Week-by-Week Learning Path
             </h3>
             <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">

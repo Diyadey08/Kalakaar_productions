@@ -18,7 +18,7 @@ export function CareersSection({ careersImageY }: CareersSectionProps) {
     <section className="relative w-full bg-v0-dark-purple text-v0-text-light py-16 md:py-20 lg:py-24 overflow-hidden">
       <div className="container grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-3 md:space-y-4 z-10 pt-4 md:pt-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#246CF4]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight  text-black dark:text-white">
             Build better careers with Us
           </h2>
           <p className="text-base md:text-lg text-v0-text-light max-w-md">
@@ -26,15 +26,15 @@ export function CareersSection({ careersImageY }: CareersSectionProps) {
           </p>
           
           <div className="flex flex-wrap justify-start gap-24 mt-8">
-            <button className="relative inline-flex h-14 w-40 overflow-hidden rounded-md p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
+            <button 
+              onClick={() => {
+                // Navigate to main page and scroll to contact section
+                window.location.href = '/#contact';
+              }}
+              className="relative inline-flex h-12 overflow-hidden rounded-md p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            >
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-blue-700 px-6 py-2 text-base font-medium text-white backdrop-blur-3xl transition-colors duration-300 group-hover:bg-[#246CF4]">
-                Enroll Now
-              </span>
-            </button>
-            <button className="relative inline-flex h-14 w-40 overflow-hidden rounded-md p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-blue-700 px-6 py-2 text-base font-medium text-white backdrop-blur-3xl transition-colors duration-300 group-hover:bg-[#246CF4]">
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-blue-700 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
                 Enquire Now
               </span>
             </button>
