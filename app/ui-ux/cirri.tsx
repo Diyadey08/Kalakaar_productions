@@ -473,7 +473,7 @@ export function CurriculumSection() {
             <Badge variant="secondary" className="px-3 py-1 text-sm bg-blue-500/20 text-black dark:text-white">
               CURRICULUM
             </Badge>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black dark:text-white">
+            <h2 className="text-3xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight text-black dark:text-white">
               Skills You&apos;ll Master
             </h2>
             <p className="text-base md:text-lg text-v0-text-light max-w-md">

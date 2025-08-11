@@ -18,7 +18,7 @@ export function CareersSection({ careersImageY }: CareersSectionProps) {
     <section className="relative w-full bg-v0-dark-purple text-v0-text-light py-16 md:py-20 lg:py-24 overflow-hidden">
       <div className="container grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-3 md:space-y-4 z-10 pt-4 md:pt-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight  text-black dark:text-white">
+          <h2 className="text-3xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl  font-bold leading-tight  text-black dark:text-white">
             Build better careers with Us
           </h2>
           <p className="text-base md:text-lg text-v0-text-light max-w-md">
