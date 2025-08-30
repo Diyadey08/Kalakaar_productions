@@ -52,7 +52,7 @@ export function CareersSection({ careersImageY }: CareersSectionProps) {
         <div className="relative flex justify-center items-center h-[400px] md:h-[500px] lg:h-[600px]">
           <motion.div style={{ y: careersImageY }} className="absolute w-full h-full flex justify-center items-center">
             <Image
-              src="/https___corcel.b-cdn.net_ca629a1a-9f6d-495a-9bee-738bc73026fd.webp"
+              src="https://i.postimg.cc/MpGqJ3P5/career-section-1.webp"
               alt="Student learning UI/UX design with laptop and design tools"
               width={800}
               height={600}

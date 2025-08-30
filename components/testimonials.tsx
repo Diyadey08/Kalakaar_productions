@@ -12,7 +12,7 @@ export default function Testimonials() {
       title: "NID Student, Product Design",
       avatar: "PS",
       designation: "NID Student, Product Design", // added
-      src: "/Component 40.png", // added (use image URL if available)
+      src: "https://i.postimg.cc/j2bH97XV/Component-40.png", // added (use image URL if available)
     },
     {
       quote:
@@ -21,7 +21,7 @@ export default function Testimonials() {
       title: "Freelance Digital Artist",
       avatar: "AP",
       designation: "Freelance Digital Artist", // added
-      src: "/Component 41.png", // added
+      src: "https://i.postimg.cc/NGdFZXb1/Component-41.png", // added
     },
     {
       quote:
@@ -30,7 +30,7 @@ export default function Testimonials() {
       title: "UI/UX Designer, Tech Startup",
       avatar: "SR",
       designation: "UI/UX Designer, Tech Startup", // added
-      src: "/Component 42.png", // added
+      src: "https://i.postimg.cc/DfpfxTy6/Component-42.png", // added
     },
   ]
 
