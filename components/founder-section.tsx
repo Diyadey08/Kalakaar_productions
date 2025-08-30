@@ -15,7 +15,7 @@ const founderData = {
   images: [
     
     {
-      url: "/IMG_3806-removebg-preview.png",
+      url: "https://i.postimg.cc/1tyf6rRj/IMG-3806-removebg-preview.png",
       alt: "Founder teaching students",
     },
     

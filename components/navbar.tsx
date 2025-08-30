@@ -38,13 +38,13 @@ export default function Navbar() {
           <Link href="/" aria-label="Kalakaar Homepage">
             {isDark ? (
               <img
-                src="/Kalakaar_logo_Dark.png"
+                src="https://i.postimg.cc/grb9XNmw/Kalakaar-logo-1-08.png"
                 alt="Kalakaar Dark Logo"
                 className="h-[100px] w-auto object-contain mt-2"
               />
             ) : (
               <img
-                src="/Kalakaar logo light.png"
+                src="https://i.postimg.cc/RFqqXVf7/Kalakaar-logo-light.png"
                 alt="Kalakaar Light Logo"
                 className="h-[100px] w-auto object-contain mt-2"
               />

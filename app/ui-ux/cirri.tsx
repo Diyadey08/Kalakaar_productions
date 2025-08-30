@@ -485,7 +485,7 @@ export function CurriculumSection() {
           {/* Image */}
           <div className="relative w-full h-64 md:h-96 flex items-center justify-center bg-gradient-to-br from-[#246CF4]/20 to-[#246CF4]/30 rounded-xl p-4 overflow-hidden md:max-w-md">
             <Image
-              src="/uiUx 2nd.webp"
+              src="https://i.postimg.cc/yY542m53/uiUx-2nd.webp"
               alt="Design Process Illustration"
               width={400}
               height={300}
