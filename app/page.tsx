@@ -34,59 +34,31 @@ export default function Home() {
               <div className="px-4 py-2 text-sm font-medium border-2 text-blue-950 dark:text-white mt-5 hover:border-orange-600 rounded-lg">
                 🎨 Creative Learning Platform
               </div>
+            <div>
               <h1 className="text-4xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter mt-2  text-blue-950 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">
-                          <AnimatedSplitText 
-                            text="Kalakaar" 
-                            className="tracking-tight"
-                            variant="fade"
-                            stagger={0.1}
-                          />
-                        </h1>
+                    Kalakaar
+              </h1>
 
-
-              {/* School of Art & Design - Smaller on mobile */}
-              <div className="mt-4 text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-medium">
-                <AnimatedSplitText
-                  text="School of Art & Design"
-                  className="tracking-tight"
-                  variant="slide"
-                  stagger={0.08}
-                  splitBy="word"
-                  renderWord={(word: string, index: number) => (
-                    <span 
-                      key={index}
-                      className={
-                        word === 'Art' || word === 'Design' 
-                          ? 'text-[#246CF4]' 
-                          : 'text-blue-950 dark:text-white'
-                      }
-                    >
-                      {word}
-                    </span>
-                  )}
-                />
+               {/* School of Art & Design - Smaller on mobile */}
+               <div className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-medium">
+                  School of Art & Design  
               </div>
 
+
+            </div>
+             
               {/* Tagline */}
-              <p className="text-lg md:text-xl font-semibold mb-4">
-                <AnimatedSplitText
-                  text="Your Gateway to Artistic Excellence"
-                  className="md:text-xl font-semibold text-lg"
-                  variant="fade"
-                  stagger={0.03}
-                  splitBy="word"
-                />
+              <p className="text-lg md:text-xl font-semibold mt-4 mb-4">
+                
+                  Your Gateway to Artistic Excellence
+                 
               </p>
 
               {/* Description */}
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mb-12">
-                <AnimatedSplitText
-                  text="Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and creators."
-                  className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl"
-                  variant="slide"
-                  stagger={0.02}
-                  delay={0.5}
-                />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mb-12 ">
+               
+                 Empowering artists and designers of all ages through expert-led courses, exam coaching, and creative workshops. Join our vibrant community of learners and  creators."
+                  
               </p>
 
               {/* Typing Input */}
@@ -132,7 +104,7 @@ export default function Home() {
             {/* Feature Cards */}
             <div className="grid gap-8 lg:grid-cols-3 items-start ">
               {/* Card 1 */}
-              <div className="transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.03] flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+              <div className="h-[22rem] group relative bg-white/5 dark:bg-white/5 rounded-xl p-6 md:p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-[#246CF4] transition-all duration-300 ease-in-out transform hover:-translate-y-2">
 
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg">
                   <Palette className="h-10 w-10" />
@@ -145,7 +117,7 @@ export default function Home() {
 
               {/* Card 2 */}
              
-              <div className="transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.03] flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+              <div className="h-[22rem] group relative bg-white/5 dark:bg-white/5 rounded-xl p-6 md:p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-[#246CF4] transition-all duration-300 ease-in-out transform hover:-translate-y-2">
   
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg">
                   <GraduationCap className="h-10 w-10" />
@@ -157,7 +129,7 @@ export default function Home() {
               </div>
 
               {/* Card 3 */}
-              <div className="transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] hover:scale-[1.03] flex flex-col items-center space-y-6 text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 border border-purple-200 dark:border-purple-800 h-[22rem]">
+              <div className="h-[22rem] group relative bg-white/5 dark:bg-white/5 rounded-xl p-6 md:p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-[#246CF4] transition-all duration-300 ease-in-out transform hover:-translate-y-2">
 
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg">
                   <Zap className="h-10 w-10" />
